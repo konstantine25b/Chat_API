@@ -5,6 +5,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+ASGI_APPLICATION = 'chatapi.asgi.application'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -20,15 +22,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'daphne',
     'chat', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'daphne',
     'corsheaders',
+    'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
     'channels',
@@ -69,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'chatapi.wsgi.application'
 
-ASGI_APPLICATION = 'chatapi.asgi.application'
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
